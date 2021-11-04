@@ -261,39 +261,51 @@ namespace AssignmentTwo
             Console.WriteLine(longestNumberLength);
         }
 
-        static public void Start6()
+        static public void Start6() // broke, but close
         {
             int[] input = { 1, 2, 2, 3, 3, 4, 5 }; // Sample input
-            int[][] counts = new int[0][]; // Holds the counts from the input
-            int[][] tempCounts;
+                                                   //int[][] counts = new int[0][]; // Holds the counts from the input
+            int[,] counts = { { 1, 0 } };
+            int[,] tempCounts;
 
             // Loops through every value in the input
-            foreach (int i in input)
+            for(int i = 1;i < input.Length;i++)
             {
+                // Loops through the numbers already counted
                 for(int j = 0; j < counts.Length; j++)
                 {
-                    if(counts[j][1] == input[i])
+                    // If the current number has already been counted
+                    if(counts[j,1] == input[i])
                     {
-                        counts[j][2]++;
+                        // Increment the count for it by one
+                        counts[j,2]++;
                     }
+                    // Else create a new slot for the uncounted number
                     else
                     {
-                        tempCounts = new int[counts.Length][];
+                        tempCounts = new int[counts.Length,2];
                         for (int tempI = 0; tempI < counts.Length; tempI++)
                         {
-                            tempCounts[tempI] = counts[tempI];
+                            Console.WriteLine(tempCounts[tempI, 1]);
+                            Console.WriteLine(counts[tempI, 1]);
+                            Console.WriteLine(tempCounts[tempI, 2]);
+                            Console.WriteLine(counts[tempI, 2]);
+                            tempCounts[tempI, 1] = counts[tempI, 1];
+                            tempCounts[tempI, 2] = counts[tempI, 2];
                         }
-                        tempCounts[tempCounts.Length - 1][1] = i;
-                        tempCounts[tempCounts.Length - 1][2] = 1;
+                        tempCounts[tempCounts.Length - 1,1] = i;
+                        tempCounts[tempCounts.Length - 1,2] = 1;
                         counts = tempCounts;
+                        tempCounts = null;
                     }
                 }
             }
 
             for (int j = 0; j < counts.Length; j++)
             {
-                Console.WriteLine(counts[j][1]);
-                Console.WriteLine(counts[j][2]);
+                Console.WriteLine("Sample text");
+                Console.WriteLine(counts[j,1]);
+                Console.WriteLine(counts[j,2]);
             }
         }
     }

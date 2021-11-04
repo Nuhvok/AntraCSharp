@@ -35,6 +35,8 @@ namespace AssignmentOne
             long seconds;
             long milliseconds;
             long nanoseconds;
+
+            // Tries to get an input as an int
             try
             {
                 Console.WriteLine("Enter a number of centuries: ");
@@ -46,6 +48,7 @@ namespace AssignmentOne
                 return;
             }
 
+            // Tries to calculate the other fields
             try
             {
                 years = checked(centuries * 100);
@@ -61,6 +64,8 @@ namespace AssignmentOne
                 Console.WriteLine("An overflow occurred");
                     return;
             }
+
+            // Prints the output
             Console.WriteLine("{0,-20} {1,20}\n", "Type", "Amount");
 
             Console.WriteLine("{0,-20} {1,20}\n", "Centuries", centuries);

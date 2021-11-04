@@ -213,5 +213,41 @@ namespace AssignmentTwo
             Console.WriteLine(longestNumber);
             Console.WriteLine(longestNumberLength);
         }
+
+        static public void Start6()
+        {
+            int[] input = { 1, 2, 2, 3, 3, 4, 5 };
+            int[][] counts = new int[0][];
+            int[][] tempCounts;
+
+            foreach (int i in input)
+            {
+                //bool alreadyFound = false;
+                for(int j = 0; j < counts.Length; j++)
+                {
+                    if(counts[j][1] == input[i])
+                    {
+                        counts[j][2]++;
+                    }
+                    else
+                    {
+                        tempCounts = new int[counts.Length][];
+                        for (int tempI = 0; tempI < counts.Length; tempI++)
+                        {
+                            tempCounts[tempI] = counts[tempI];
+                        }
+                        tempCounts[tempCounts.Length - 1][1] = i;
+                        tempCounts[tempCounts.Length - 1][2] = 1;
+                        counts = tempCounts;
+                    }
+                }
+            }
+
+            for (int j = 0; j < counts.Length; j++)
+            {
+                Console.WriteLine(counts[j][1]);
+                Console.WriteLine(counts[j][2]);
+            }
+        }
     }
 }

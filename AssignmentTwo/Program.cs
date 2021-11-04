@@ -6,7 +6,8 @@ namespace AssignmentTwo
     {
         static void Main(string[] args)
         {
-            One.Start5();
+            //One.Start6();
+            Two.Start4();
         }
     }
 }

@@ -31,6 +31,9 @@ namespace AssignmentThree
             {
                 Console.WriteLine(order.ToString());
             }
+
+
+            One.Start3();
         }
     }
 }

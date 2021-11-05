@@ -21,7 +21,7 @@ namespace AssignmentThree
             int[] newArray = new int[pLength];
 
             // Loops through a new array of pLength and populates it
-            for(int i = 0; i < pLength; i++)
+            for (int i = 0; i < pLength; i++)
             {
                 newArray[i] = i + 1;
             }
@@ -33,7 +33,7 @@ namespace AssignmentThree
             int tempInt;
 
             // Loops through hafl of the array, swapping the correspond number on each half
-            for(int i = 0; i < (numbers.Length / 2); i++)
+            for (int i = 0; i < (numbers.Length / 2); i++)
             {
                 tempInt = numbers[i];
                 numbers[i] = numbers[numbers.Length - 1 - i];
@@ -44,7 +44,7 @@ namespace AssignmentThree
         private static void PrintNumbers(int[] numbers)
         {
             Console.WriteLine("List of numbers:");
-            foreach(int i in numbers)
+            foreach (int i in numbers)
             {
                 Console.WriteLine(i);
             }
@@ -58,7 +58,7 @@ namespace AssignmentThree
             Console.WriteLine("First ten Fibonacci numbers:");
             Console.WriteLine(1);
             Console.WriteLine(1);
-            for (int i = 3;i <= 10; i++)
+            for (int i = 3; i <= 10; i++)
             {
                 Console.WriteLine(Fibonacci(1, 1, i - 2));
             }
@@ -85,7 +85,7 @@ namespace AssignmentThree
             int nextNum = precedentOne + precedentTwo;
             input--;
 
-            if(input > 0)
+            if (input > 0)
             {
                 return Fibonacci(precedentTwo, nextNum, input);
             }
@@ -100,14 +100,53 @@ namespace AssignmentThree
             DateTime firstDate = DateTime.Now.AddDays(30);
             DateTime secondDate = DateTime.Now;
             int daysCount = 0;
+            bool isNotHoliday = false;
+            bool isNotWeekend = false;
 
-            while((secondDate - firstDate).Days > 0)
+            DateTime somedate = new DateTime(2021, 11, 11);
+            int dayoyr = somedate.DayOfYear;
+
+            while ((firstDate - secondDate).Days > 0)
             {
-                switch(firstDate.Date.DayOfYear)
+                switch (secondDate.Date.DayOfYear)
                 {
-                    //case: new DateTime(2021, 11, 11).DayOfYear;
+                    case 315:
+                        break;
+                    case 329:
+                        break;
+                    case 358:
+                        break;
+                    default:
+                        isNotHoliday = true;
+                        break;
                 }
+
+                switch (secondDate.Date.DayOfWeek)
+                {
+                    case DayOfWeek.Saturday:
+                        break;
+                    case DayOfWeek.Sunday:
+                        break;
+                    default:
+                        isNotWeekend = true;
+                        break;
+                }
+
+                if(isNotHoliday && isNotWeekend)
+                {
+                    daysCount++;
+                }
+
+                secondDate = secondDate.AddDays(1);
             }
+            Console.WriteLine(daysCount);
+        }
+
+        static public void Start4()
+        {
+            Console.WriteLine(new DateTime(2021, 11, 11).DayOfYear);
+            Console.WriteLine(new DateTime(2021, 11, 25).DayOfYear);
+            Console.WriteLine(new DateTime(2021, 12, 24).DayOfYear);
         }
     }
 }

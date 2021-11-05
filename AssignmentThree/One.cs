@@ -71,7 +71,7 @@ namespace AssignmentThree
                     break;
 
                 case 2:
-                    Console.WriteLine(2);
+                    Console.WriteLine(1);
                     break;
 
                 default:

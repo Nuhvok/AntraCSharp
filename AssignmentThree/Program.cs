@@ -6,7 +6,7 @@ namespace AssignmentThree
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            One.Start2();
         }
     }
 }

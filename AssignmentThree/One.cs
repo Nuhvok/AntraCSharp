@@ -93,7 +93,7 @@ namespace AssignmentThree
             }
         }
 
-        static public void Start2()
+        static public void Start3()
         {
             //date thing
         }

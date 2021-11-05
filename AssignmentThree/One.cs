@@ -20,6 +20,7 @@ namespace AssignmentThree
         {
             int[] newArray = new int[pLength];
 
+            // Loops through a new array of pLength and populates it
             for(int i = 0; i < pLength; i++)
             {
                 newArray[i] = i + 1;
@@ -31,6 +32,7 @@ namespace AssignmentThree
         {
             int tempInt;
 
+            // Loops through hafl of the array, swapping the correspond number on each half
             for(int i = 0; i < (numbers.Length / 2); i++)
             {
                 tempInt = numbers[i];
@@ -77,7 +79,7 @@ namespace AssignmentThree
                     break;
             }
         }
-
+        // This method can calculate a Fibonacci number. The input should be the number desired minus 2.
         private static int Fibonacci(int precedentOne, int precedentTwo, int input)
         {
             int nextNum = precedentOne + precedentTwo;

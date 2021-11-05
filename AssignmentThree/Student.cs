@@ -41,6 +41,7 @@ namespace AssignmentThree
             return addresses;
         }
 
+        // Sets the year of the student to the next acidemic year
         public void increaseYear()
         {
             switch(year)

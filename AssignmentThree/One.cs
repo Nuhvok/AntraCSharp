@@ -97,7 +97,17 @@ namespace AssignmentThree
 
         static public void Start3()
         {
-            //date thing
+            DateTime firstDate = DateTime.Now.AddDays(30);
+            DateTime secondDate = DateTime.Now;
+            int daysCount = 0;
+
+            while((secondDate - firstDate).Days > 0)
+            {
+                switch(firstDate.Date.DayOfYear)
+                {
+                    //case: new DateTime(2021, 11, 11).DayOfYear;
+                }
+            }
         }
     }
 }

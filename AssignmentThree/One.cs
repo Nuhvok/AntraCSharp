@@ -79,6 +79,7 @@ namespace AssignmentThree
                     break;
             }
         }
+
         // This method can calculate a Fibonacci number. The input should be the number desired minus 2.
         private static int Fibonacci(int precedentOne, int precedentTwo, int input)
         {

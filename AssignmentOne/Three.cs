@@ -10,7 +10,7 @@ namespace AssignmentOne
     {
         static public void Start()
         {
-            // Loops through the valies 1-100
+            // Loops through the values 1-100
             for(int i = 1; i <=100; i++)
             {
                 // If the current value is divisible by three evenly
@@ -42,12 +42,13 @@ namespace AssignmentOne
 
         static public void Start2()
         {
-            Console.WriteLine("The max exceeds the possible range and will create an infinite loop.");
-
-            int max = 500;
-            for (byte i = 0; i < max; i++)
+            checked
             {
-                Console.WriteLine(i);
+                int max = 500;
+                for (byte i = 0; i < max; i++)
+                {
+                    Console.WriteLine(i);
+                }
             }
         }
 

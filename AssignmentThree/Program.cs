@@ -33,7 +33,7 @@ namespace AssignmentThree
             }
 
 
-            One.Start3();
+            //One.Start3();
         }
     }
 }

@@ -23,9 +23,152 @@ namespace AssignmentTwo
             }
         }
 
-        static public void Start2()
+        static public void Start2() // unfinished
         {
+            //string input = "C# is not C++, and PHP is not Delphi!";
+            string input = "The quick brown fox jumps over the lazy dog /Yes! Really!!!/.";
+            char[] splitDelimiters = { '.', ',', ':', ';', '=', '(', ')', '&', '[', ']', '"', '\'', '\\', '/', '!', '?', ' ' };
+            string[] splitWords = input.Split(splitDelimiters);
+            int punct = 0;
 
+            for(int i = splitWords.Length - 2; i > 0; i--)
+            {
+                Console.Write(splitWords[i]);
+            }
+        }
+
+        //static public void Start2()
+        //{
+        //    string input = "C# is not C++, and PHP is not Delphi!";
+        //    char[] inputChars = input.ToCharArray();
+
+        //    string[] words = new string[0];
+        //    string[] tempWords;
+        //    char[] punctuation = new char[0];
+
+
+        //    int tempStart;
+        //    int tempEnd;
+
+        //    tempStart = 0;
+
+        //    for(int i = 0; i < inputChars.Length; i++)
+        //    {
+        //        switch (inputChars[i])
+        //        {
+        //            case '.':
+        //                punctuation = addPunct('.', punctuation);
+
+        //                break;
+
+        //            case ',':
+        //                punctuation = addPunct(',', punctuation);
+
+        //                break;
+
+        //            case ':':
+        //                punctuation = addPunct(':', punctuation);
+
+        //                break;
+
+        //            case ';':
+        //                punctuation = addPunct(';', punctuation);
+
+        //                break;
+
+        //            case '=':
+        //                punctuation = addPunct('=', punctuation);
+
+        //                break;
+
+        //            case '(':
+        //                punctuation = addPunct('(', punctuation);
+
+        //                break;
+
+        //            case ')':
+        //                punctuation = addPunct(')', punctuation);
+
+        //                break;
+
+        //            case '&':
+        //                punctuation = addPunct('&', punctuation);
+
+        //                break;
+
+        //            case '[':
+        //                punctuation = addPunct(']', punctuation);
+
+        //                break;
+
+        //            case '"':
+        //                punctuation = addPunct('"', punctuation);
+
+        //                break;
+
+        //            case '\'':
+        //                punctuation = addPunct('\'', punctuation);
+
+        //                break;
+
+        //            case '\\':
+        //                punctuation = addPunct('\\', punctuation);
+
+        //                break;
+
+        //            case '/':
+        //                punctuation = addPunct('/', punctuation);
+
+        //                break;
+
+        //            case '!':
+        //                punctuation = addPunct('!', punctuation);
+
+        //                break;
+
+        //            case '?':
+        //                punctuation = addPunct('?', punctuation);
+        //                break;
+
+        //            case ' ':
+        //                punctuation = addPunct(' ', punctuation);
+
+        //                break;
+        //            default:
+
+        //                break;
+        //        }
+
+        //    }
+
+        //    Console.WriteLine(punctuation.Length);
+        //    Console.WriteLine(words.Length);
+
+        //}
+
+        private static char[] addPunct(char charToAdd, char[] listOfChars)
+        {
+            char[] tempPunctuation;
+            tempPunctuation = new char[listOfChars.Length + 1];
+            for(int i = 0; i < listOfChars.Length; i++)
+            {
+                tempPunctuation[i] = listOfChars[i];
+            }
+            tempPunctuation[tempPunctuation.Length - 1] = charToAdd;
+            listOfChars = tempPunctuation;
+            return listOfChars;
+        }
+
+        private static void addString(string stringToAdd, string[] listOfStrings)
+        {
+            string[] tempString;
+            tempString = new string[listOfStrings.Length + 1];
+            for (int i = 0; i < listOfStrings.Length; i++)
+            {
+                tempString[i] = listOfStrings[i];
+            }
+            tempString[tempString.Length - 1] = stringToAdd;
+            listOfStrings = tempString;
         }
 
         static public void Start3() // unfinished

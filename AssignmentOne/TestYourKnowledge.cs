@@ -23,8 +23,8 @@ namespace AssignmentOne
 
         /************************************************************
          * Data Types
-         * (1
-         * (2
+         * (1 Divide by zero exception
+         * (2 Infinity
          * (3 If a checked expression was not used, the overflow is
          *      simply lost. 
          * (4 The first expression will increment y after the

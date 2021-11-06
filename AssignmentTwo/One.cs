@@ -120,36 +120,55 @@ namespace AssignmentTwo
             }
         }
 
-        static public void Start3() // broke
+        static public void Start3()
         {
-            int start = 4; // Sample start
-            int end = 11;  // Sample end
+            int start = 3; // Sample start
+            int end = 31;  // Sample end
+
+            bool isPrime = true;
 
             int[] primes = new int[0]; // Array to hold the found prime numbers
             int[] tempArray;
 
+            // Loops through each value within the range
             for(int i = start; i <= end; i++)
             {
+                // Loops through each possible divisor between 2 and the value being checked minus 1
                 for(int j = 2; j < i; j++)
                 {
-                    Console.WriteLine(i);
-                    if ((j/(float)i) % 1 == 0)
+                    isPrime = true; // Assume value is prime until proven otherwise
+                    //Console.WriteLine(i);
+                    // If value is composite
+                    if ((i/(float)j) % 1 == 0)
                     {
-                        
-                        tempArray = new int[primes.Length + 1];
-
-                        for (int tempI = 0; tempI < primes.Length; tempI++)
-                        {
-                            tempArray[tempI] = primes[tempI];
-                        }
-                        tempArray[tempArray.Length - 1] = i;
-                        primes = tempArray;
-                        tempArray = null;
+                        // Mark as not prime and break from the loop
+                        isPrime = false;
                         break;
                     }
                 }
+
+                // If the value is prime, add it to the primes array
+                if (isPrime)
+                {
+                    // Initialize the temp array
+                    tempArray = new int[primes.Length + 1];
+
+                    // Loops through each value in the primes array copying it to the temp array
+                    for (int tempI = 0; tempI < primes.Length; tempI++)
+                    {
+                        tempArray[tempI] = primes[tempI];
+                    }
+
+                    // Copies the new prime into the temp array
+                    tempArray[tempArray.Length - 1] = i;
+
+                    // Copy the temp array over and clear the temp
+                    primes = tempArray;
+                    tempArray = null;
+                }
             }
 
+            // Print out the primes
             foreach (int i in primes)
                 Console.WriteLine(i);
         }
@@ -269,43 +288,43 @@ namespace AssignmentTwo
             int[,] tempCounts;
 
             // Loops through every value in the input
-            for(int i = 1;i < input.Length;i++)
+            for(int i = 0;i < input.Length;i++)
             {
                 // Loops through the numbers already counted
-                for(int j = 0; j < counts.Length; j++)
+                for (int j = 0; j < counts.Length; j++)
                 {
                     // If the current number has already been counted
-                    if(counts[j,1] == input[i])
+                    if (counts[j, 0] == input[i])
                     {
                         // Increment the count for it by one
-                        counts[j,2]++;
+                        counts[j,1]++;
                     }
                     // Else create a new slot for the uncounted number
                     else
                     {
-                        tempCounts = new int[counts.Length,2];
-                        for (int tempI = 0; tempI < counts.Length; tempI++)
+                        tempCounts = new int[(counts.Length / 2) + 1, 2];
+                        for (int tempI = 0; tempI < counts.Length / 2; tempI++)
                         {
+                            Console.WriteLine(tempCounts[tempI, 0]);
+                            Console.WriteLine(counts[tempI, 0]);
                             Console.WriteLine(tempCounts[tempI, 1]);
                             Console.WriteLine(counts[tempI, 1]);
-                            Console.WriteLine(tempCounts[tempI, 2]);
-                            Console.WriteLine(counts[tempI, 2]);
+                            tempCounts[tempI, 0] = counts[tempI, 0];
                             tempCounts[tempI, 1] = counts[tempI, 1];
-                            tempCounts[tempI, 2] = counts[tempI, 2];
                         }
-                        tempCounts[tempCounts.Length - 1,1] = i;
-                        tempCounts[tempCounts.Length - 1,2] = 1;
+                        tempCounts[(tempCounts.Length / 2) - 1,0] = i;
+                        tempCounts[(tempCounts.Length / 2) - 1,1] = 1;
                         counts = tempCounts;
                         tempCounts = null;
                     }
                 }
             }
 
-            for (int j = 0; j < counts.Length; j++)
+            for (int j = 0; j < counts.Length / 2; j++)
             {
                 Console.WriteLine("Sample text");
+                Console.WriteLine(counts[j,0]);
                 Console.WriteLine(counts[j,1]);
-                Console.WriteLine(counts[j,2]);
             }
         }
     }

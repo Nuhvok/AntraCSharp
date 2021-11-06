@@ -25,10 +25,39 @@ namespace AssignmentTwo
 
         static public void Start2()
         {
+
         }
 
-        static public void Start3()
+        static public void Start3() // unfinished
         {
+            string input = "Hi,exe? ABBA! Hog fully a string: ExE. Bob";
+            char[] splitDelimeters = { ' ', ',', '.', '!', '?', '/', ':', ';' };
+            string[] splitResult = input.Split(splitDelimeters);
+
+            foreach(string i in splitResult)
+            {
+                bool isPalan = true;
+                if (i == string.Empty)
+                {
+                    continue;
+                }
+                for(int j = 0; j < i.Length / 2; j++)
+                {
+                    if(i[j] != i[i.Length - j - 1])
+                    {
+                        isPalan = false;
+                        break;
+                    }
+                }
+
+                if(isPalan)
+                {
+                    Console.WriteLine(i);
+                }
+
+
+                //Console.WriteLine(i);
+            }
         }
         // I apologize for not getting all of this done. The array stuff was very cumbersome
         // because of the contstant changing of size and moving of data and really threw me

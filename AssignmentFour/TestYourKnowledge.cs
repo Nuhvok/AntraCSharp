@@ -11,7 +11,11 @@ namespace AssignmentFour
 
         /************************************************************
          * 
-         * (1 
+         * (1 Generics address the of having to have a new class for
+         *      each data type that is addressed. Generics allow for
+         *      both a reduction in the amount of code that must be
+         *      written and stored, and elimenate that possibility
+         *      that a type will be missed.
          * (2 new List<string>()
          * (3 Two
          * (4 False
